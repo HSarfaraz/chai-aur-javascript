@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+
+<body style="background-color: #414141;color:aliceblue;">
+    <h2>Amazing images</h2>
+    <!-- photos are gathered from pexels -->
+    <ul id="images">
+        <li><img src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="photoshop" id="photoshop" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="photoshop" id="owl" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/3532554/pexels-photo-3532554.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="photoshop" id="prayer" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/3532550/pexels-photo-3532550.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="photoshop" id="river" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="photoshop" id="japan" width="200px"></li>
+        <li><a href="https://www.google.com/" alt="google" id="google" width="200px" style="color: aliceblue;">Google</li>
+    </ul>
+</body>
+<script>
+    //Poor approach
+    /* document.getElementById('owl').onclick = function(){
+        alert("owl clicked");
+    } */
+    
+    //other approach
+    //attchEvent()
+    //jquery - onEventlistener
+
+    //Good Approach
+
+    //Event Propogation
+    //It will be clicked on ul
+    /* document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
+
+    //It will be clicked on spcific element
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+    }, false);
+    
+    //lets stop event propogation to google link
+    document.getElementById("google").addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+        // e.stopPropagation();
+    })
+     */
+
+    //Scanario: When we click on any image, then the image should hide
+
+    //step1: select the element
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        console.log(e.target.id);
+        //Apply the checks, check the tagName
+        if(e.target.tagName === "IMG"){
+            //we can remove the parent node
+            let removeIt = e.target.parentNode;
+            //Approach:1
+            removeIt.remove();
+            //Approach:2
+            // removeIt.parentNode.removeChild(removeIt);
+        }
+
+    })
+
+
+</script>
+
+</html>

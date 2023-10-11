@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff;"></body>
+  <script>
+    //create div element
+    const div = document.createElement("h1");
+    console.log(div);
+
+    //Add the properties
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+
+    //set the attributes
+    div.setAttribute("title", "generated title");
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+
+    //div.innerHTML = "Chai aur code"
+
+    const addText = document.createTextNode("Chai aur code");
+    div.appendChild(addText);
+
+    //attached to the document
+    document.body.appendChild(div);
+  </script>
+</html>

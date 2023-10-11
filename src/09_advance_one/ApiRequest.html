@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff;">
+    <pre>
+    Value	State	            Description
+    0	    UNSENT	            Client has been created. open() not called yet.
+    1	    OPENED	            open() has been called.
+    2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	    LOADING	            Downloading; responseText holds partial data.
+    4	    DONE	            The operation is complete.
+    </pre>
+    <!-- Get the details from user and show in card -->
+    <div id="card">
+      <img src="" alt="avatar image" width="200px" /><br />
+      Follower count: <span id="followers"></span>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    //  We can track the state, which will monitor continuesly
+    xhr.onreadystatechange = function () {
+      //can see state is changing
+      console.log(xhr.readyState);
+      //we can detect the state
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(data);
+        console.log(typeof data);
+        console.log(data.followers);
+
+        //scenario: create the card and add the image with followers
+        let imgData = document.getElementsByTagName("img")[0];
+        imgData.src = data.avatar_url;
+
+        let followersData = document.querySelector("#followers");
+        followersData.innerHTML = data.followers;
+      }
+    };
+    console.log(xhr.readyState);
+    xhr.send();
+  </script>
+</html>

@@ -1,0 +1,63 @@
+<!-- Edit and Delete from the DOM -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur Code | DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(langName) {
+      //create the element --> select the element then append it
+      const li = document.createElement("li");
+      //add the value to it
+      li.innerHTML = `${langName}`;
+      //append the child to ul, so first select the element
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addLanguage("Python");
+    addLanguage("Typescript");
+
+    //Optimised way of doing : Here traversing is taking less time
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      //create the text
+      const addText = document.createTextNode(langName);
+      //inject in li
+      li.appendChild(addText);
+      document.querySelector(".language").appendChild(li);
+    }
+
+    addOptiLanguage("GoLang");
+
+    //Edit:
+
+    //first select
+    const secondLang = document.querySelector("li:nth-child(2)");
+    //need to change it
+    //1st create the element and hold it new element
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    //need to add
+    secondLang.replaceWith(newLi);
+
+    //Edit:
+    //need to replace javascript with typescript
+    const firstLang = document.querySelector("li:first-child");
+    //nedd to change firstLang value
+    firstLang.outerHTML = "<li>Typescript</li>";
+
+    //Remove:
+    //get the last child
+    const lastLang = document.querySelector("li:last-child");
+    //remove it
+    lastLang.remove();
+  </script>
+</html>

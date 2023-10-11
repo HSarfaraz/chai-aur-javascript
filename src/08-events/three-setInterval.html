@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    /* const sayDate = function(){
+        console.log("Hitesh", Date.now());
+    }
+    setInterval(sayDate, 2000) */
+
+    //Example to take the parameter
+    const sayDate = function (str) {
+      console.log(str, Date.now());
+    };
+    const intervalId = setInterval(sayDate, 2000, "Sarfaraz");
+    // clearInterval(intervalId);
+
+    //Scenario: On Start button click, start the interval, on stop button click stop the intervalc
+    document.querySelector("#start").addEventListener("click", function () {
+      sayDate();
+    });
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(intervalId);
+    });
+  </script>
+</html>

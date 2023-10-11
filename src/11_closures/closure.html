@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #313131;">
+    <!-- Example 3 -->
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    /* function init() {
+        
+        let name = "Mozilla"; 
+        
+        function displayName() {
+            console.log(name); 
+        }
+        
+        displayName();
+    }
+    init(); */
+    /* 
+    function outer(){
+        let username = "hitesh";
+        function inner(){
+            let secret = "my123"
+            console.log("Inner function",username);
+        }
+        function innerTwo(){
+            console.log("Inner Two", username);
+            console.log("secret: ", secret);
+        }
+        innerTwo();
+        inner();
+    }
+    outer();
+    console.log("TOO Outer",username); */
+
+    //------------------- Example 2: Closure
+    /* 
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName; //return the reference of the function
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+ */
+  </script>
+  <script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = "orange"
+    // }
+
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+    //write genertic code
+    function clickHandler(color) {
+      //below function has access to color, due to access of lexical scope
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    //take the reference
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>
