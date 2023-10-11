@@ -64,7 +64,7 @@
 
 ## Lecture 4: Variables & Constants
 
-![DOM](/src/images/variable.jpg)
+![DOM](/src/images/variables.jpg)
 
 - Only people will survive in the Tech indutry whos motive is to create something product
 - Through javascript, we can create, mobile app, web app etc
