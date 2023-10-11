@@ -64,6 +64,8 @@
 
 ## Lecture 4: Variables & Constants
 
+![DOM](/src/images/variable.jpg)
+
 - Only people will survive in the Tech indutry whos motive is to create something product
 - Through javascript, we can create, mobile app, web app etc
 - Set goal to create Ecommerce app or social media app
@@ -123,6 +125,8 @@
 <br/>
 
 ## Lecture 6: Conversion Operation
+
+![DOM](/src/images/type-conversion.png)
 
 - We dont in javascript, what type of value we get, so we need to use conversion of datatype
 - We can write typeof in 2 ways
@@ -210,6 +214,10 @@
 
 ## Lecture 10: Stack and Heap Memory
 
+![DOM](/src/images/stack-heap.jpg)
+
+![DOM](/src/images/stack.JPG)
+
 - Memory is of 2 types 1. Stack 2. Heap Memory
 - Stack memory is used for primitiva datatype while heap memory is used for non primitive datatype
 - To draw online diagram use: https://excalidraw.com/
@@ -291,6 +299,8 @@
 
 ## Lecture 14: Array
 
+![DOM](/src/images/array.png)
+
 - Array has squre brakcet, Array has elements in it.
 - **Reference Documentation:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 - We can store the muliple values in single variable
@@ -331,6 +341,8 @@
 <br/>
 
 ## Lecture 15: Objects
+
+![DOM](/src/images/object.png)
 
 - To master javascript, we need to learn 2 things
   - Objects
@@ -398,6 +410,8 @@
 <br/>
 
 ## Lecture 18: Functions and parameters
+
+![DOM](/src/images/function.png)
 
 - While learning about functions, it is important to know about memory management as well.
 - Function means, what the 10, 20 etc lines of code you have writte, we kept in package
@@ -535,7 +549,7 @@
 <hr/>
 <br/>
 
-## Lecture 24: Control flow ☕
+## Lecture 24: Control flow 
 
 - In if statement, if the condition is true then only code will execude for if statement
 - If statment will be having comparison statement
@@ -599,6 +613,8 @@
 <br/>
 
 ## Lecture 25: for loop, break and continue
+
+![DOM](/src/images/for-loop-one.jpg)
 
 - use ctrl + d : to select the multiple value at once
 - To stop any control, we use break keyword
@@ -741,11 +757,7 @@
 - <!DOCTYPE html> will only tell what type of html page it is
 - In DOM, everything is node, like head, bodt etc
   
-```html
-<div align="center">
-  <img src="/chai-aur-javascript/06_dom/DOM.png" alt="dom image" />
-<div>
-```
+![DOM](/src/images/DOM.png)
 
 - We can go to wiki page, search for Brandan Eich, here we can search of id, firstHeading
   
@@ -1085,6 +1097,9 @@ document.getElementById('firstHeading').innerHTML = "<h1>Chai aur code<h1/>"
 - So now onwards all async calls will be done using fetch only.
 - fetch is a global mothod which start the process to fetch the resource from a network. It return the promise
 - Reference: https://developer.mozilla.org/en-US/docs/Web/API/fetch
+  
+![DOM](/src/images/event-loop.png)
+
 - Special queue is created for fetch in event loop or called as "Micro task queue or Priority queue or fetch queue", It is VIP line.
 - fetch works in 2 parts
     1) Web browser: Here nodejs add the feature of brower, It will handle the web API ➜ From it will call the network request ➜ either we will get the date  then it goes to onfulfilled or if no data found it goes to onRejection.
